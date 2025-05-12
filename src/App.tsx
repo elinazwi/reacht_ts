@@ -1,9 +1,13 @@
+import PeopleContainer from "./components/PeopleContainer"
 
 function App() {
 
   return (
-    <div className="bg-amber-300">
-     hello
+    <div>
+      
+        <PeopleContainer/>
+      
+
     </div>
   )
 }

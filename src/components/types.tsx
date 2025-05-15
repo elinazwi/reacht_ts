@@ -5,3 +5,7 @@ export interface Person {
     jobtitle: string;
     id: string;
 }
+
+export interface Filter {
+    searchTerm: string;
+}

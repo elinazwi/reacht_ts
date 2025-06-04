@@ -24,20 +24,18 @@ export default function PeopleContainer() {
   }
 
   return (
-    
-  <div>
-    <div className="fixed border mb-4 bg-white w-full h-28 p-8">
-      <input className="border p-4" type="text" placeholder="Search" onChange={(element)=>{
-        console.log(element.target.value);
-        filterPeople(element.target.value);
-        
-      }}/>
+    <div className="w-screen">
+      <div className="fixed border mb-4 bg-white w-full h-28 p-8">
+        <input className="border p-4" type="text" placeholder="Search" onChange={(element)=>{
+          console.log(element.target.value);
+          filterPeople(element.target.value);
+        }}/>
+      </div>
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 p-8 pt-32">
+        {filteredPeople.map((person:Person) => {
+          return <PeopleCard key={person.id} person={person}/>
+        })}
+      </div>
     </div>
-    <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 p-8 pt-32">
-      {filteredPeople.map((person:Person) => {
-        return <PeopleCard person={person}/>
-      })}
-    </div>
-  </div>
   )
 }

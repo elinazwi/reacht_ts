@@ -1,27 +1,10 @@
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router";
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import App from './App.tsx'
 
-import React from "react";
-import ReactDOM from "react-dom/client";
-import PeopleContainer from "./components/PeopleContainer";
-import Page2 from "./components/Page2";
-
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <PeopleContainer/>,
-  },
-  {
-    path: "/page2",
-    element: <Page2/>,
-  },
-]);
-
-const root = document.getElementById("root");
-
-ReactDOM.createRoot(root!).render(
-  <RouterProvider router={router} />
-);
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+)
